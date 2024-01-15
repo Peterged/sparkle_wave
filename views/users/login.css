@@ -1,0 +1,44 @@
+/* body adalah  */
+body {
+    background-color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1 {
+    color: white;
+}
+
+.box {
+    border: 1px solid white;
+    padding: 25px;
+    width: 350px;
+    height: 180px;
+}
+
+.box form {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.box input {
+    outline: none;
+    background: none;
+    border: 1px solid white;
+    padding: 10px;
+    color: white;
+}
+
+.box input.submit {
+    margin-top: auto;
+    color: cyan;
+    cursor: pointer;
+}
