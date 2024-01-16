@@ -10,13 +10,10 @@
 
 <body>
     <h1>Login</h1>
-    <div class="box">
-        <form action="login_proses.php" method="post">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <input type="submit" class="submit" name="submit" value="LOGIN">
-        </form>
-    </div>
+    <form class="box" action="login_proses.php" method="post">
+        <input type="text" name="username" placeholder="Username" autocomplete="off" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="submit" class="submit" name="submit" value="LOGIN">
+    </form>
 </body>
-
 </html>

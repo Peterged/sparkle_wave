@@ -13,7 +13,8 @@ body {
 .box {
     padding: 25px;
     width: 350px;
-    height: 160px;
+    min-height: 160px;
+    height: auto;
     display: flex;
     flex-direction: column;
     gap: 17px;
@@ -23,14 +24,8 @@ body {
     outline: none;
     padding: 10px;
     background: none;
-    border: 1px solid #4A4A4A;
-    border-radius: 5px;
+    border: 1px solid white;
     color: white;
-    transition: 150ms ease-in-out;
-}
-
-.box input:focus {
-    border: 1px solid #616161;
 }
 
 .box input.submit {
@@ -39,6 +34,8 @@ body {
     cursor: pointer;
 }
 
-.box input.submit:hover {
-    background: #0f0f0f;
+.box select {
+    padding: 10px;
+    background: white;
+    color: black;
 }
