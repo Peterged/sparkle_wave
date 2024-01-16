@@ -6,7 +6,7 @@ body {
     justify-content: center;
     flex-direction: column;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: hidden;
     color: white;
 }
 
@@ -20,12 +20,19 @@ body {
     gap: 17px;
 }
 
-.box input {
+.box input,
+.box select {
     outline: none;
     padding: 10px;
     background: none;
-    border: 1px solid white;
+    border: 1px solid #4A4A4A;
+    border-radius: 5px;
     color: white;
+    transition: 150ms ease-in-out;
+}
+
+.box input:focus {
+    border: 1px solid #616161;
 }
 
 .box input.submit {
@@ -34,8 +41,10 @@ body {
     cursor: pointer;
 }
 
-.box select {
-    padding: 10px;
-    background: white;
-    color: black;
+.box input.submit:hover {
+    background: #0f0f0f;
+}
+
+.box select option {
+    background-color: black;
 }

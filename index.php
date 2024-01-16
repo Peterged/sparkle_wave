@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SparkleWave</title>
-</head>
-<body>
-    
-</body>
-</html>
+<?php 
+
+include_once 'config/database.php';
+
+$pageName = @$_GET['page'] ?? 'login';
+
+if($pageName == 'login') {
+    include_once 'views/users/login.php';
+} else if($pageName == 'register') {
+    include_once 'views/users/register.php';
+} else if($pageName == 'logout') {
+    include_once 'views/users/logout.php';
+} elseif ($pageName == 'panel') {
+    include_once 'views/admin_panel/panel.php';
+} else {
+    include_once 'views/users/login.php';
+}
