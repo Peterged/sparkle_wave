@@ -7,5 +7,5 @@
 ?>
 
 <div class="box">
-    <h1>PELANGGAN</h1>
+    <h1>PAKET</h1>
 </div>

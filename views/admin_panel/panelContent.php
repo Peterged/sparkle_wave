@@ -1,5 +1,5 @@
 <?php
-    $section = @$_GET['panelSection'];
+    $section = @$_GET['page'];
     if($section == 'dashboard') {
         include_once 'components/dashboard.php';
     }

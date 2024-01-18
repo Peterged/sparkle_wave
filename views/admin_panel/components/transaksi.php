@@ -7,5 +7,5 @@
 ?>
 
 <div class="box">
-
+    <h1>TRANSAKSI</h1>
 </div>

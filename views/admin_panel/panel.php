@@ -4,7 +4,7 @@
     if(!@$_SESSION['username']) {
         header("Location: ../../index.php");
     }
-    $_SESSION['role'] = 'owner';
+    $_SESSION['role'] = 'admin';
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +19,12 @@
 </head>
 
 <body>
+    <!-- Kita ambil sidebarnya -->
     <?php
         include_once 'sidebar.php';
     ?>
 
+    <!-- Ini buat tempat komponen -->
     <div class="container">
         <?php
             include_once 'panelContent.php';
