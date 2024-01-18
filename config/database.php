@@ -1,9 +1,9 @@
-<?php 
+<?php
 
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$databaseName = 'laundry';
+$databaseName = 'uk';
 
 $koneksi = mysqli_connect($host, $username, $password, $databaseName);
 
