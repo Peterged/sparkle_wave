@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 include_once 'config/database.php';
 
@@ -11,7 +11,7 @@ if($pageName == 'login') {
 } else if($pageName == 'logout') {
     include_once 'views/users/logout.php';
 } elseif ($pageName == 'panel') {
-    include_once 'views/admin_panel/panel.php';
+    header("Location: views/admin_panel/panel.php");
 } else {
     include_once 'views/users/login.php';
 }

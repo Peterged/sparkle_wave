@@ -1,36 +1,35 @@
 <head>
-    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="../../css/sidebar.css">
 </head>
 
 <div class="sidebar">
     <p class="profile-name">Aldovanio - Admin</p>
-    <?php 
-        $role = @$_SESSION['role'];
+    <?php
 
-        $links = [
-            'admin' => [
-                ['Dashboard', 'index.php?page='],
-                ['Karyawan', ''],
-                ['Outlet', ''],
-                ['Package', ''],
-                ['Pelanggan', ''],
-                ['Transaksi', ''],
-                ['Report', '']
-            ],
-            'kasir' => [
-                ['Dashboard', ''],
-                ['Transaksi', ''],
-                ['Report', '']
-            ],
-            'owner' => [
-                ['Report', '']
-            ]
-        ];
+    $role = @$_SESSION['role'];
+
+    if ($role === 'admin') {
+        echo "
+                <a href='?page=dashboard'>Dashboard</a>
+                <a href='?page=karyawan'>Karyawan</a>
+                <a href='?page=outlet'>Outlet</a>
+                <a href='?page=package'>Package</a>
+                <a href='?page=pelanggan'>Pelanggan</a>
+                <a href='?page=transaksi'>Transaksi</a>
+                <a href='?page=report'>Report</a>
+            ";
+    } elseif ($role === 'kasir') {
+        echo "
+                <a href='?page=dashboard'>Dashboard</a>
+                <a href='?page=transaksi'>Transaksi</a>
+                <a href='?page=pelanggan'>Pelanggan</a>
+                <a href='?page=report'>Report</a>
+            ";
+    } elseif ($role === 'owner') {
+        echo "
+            <a href='?page=report'>Report</a>
+            ";
+    }
+
     ?>
-
-    <?php if(isset($links[$role])) : ?>
-        <?php foreach($links[$role] as $link) : ?>
-            <a href="<?php echo $link[1]; ?>"><?php echo $link[0]; ?></a>
-        <?php endforeach; ?>
-    <?php endif; ?>
 </div>
