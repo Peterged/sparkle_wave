@@ -1,10 +1,10 @@
 <?php
     session_start();
-    $_SESSION['username'] = 'KreshnaDhana';
     if(!@$_SESSION['username']) {
+        session_destroy();
         header("Location: ../../index.php");
     }
-    $_SESSION['role'] = 'admin';
+    include "../../config/koneksi.php";
 ?>
 
 <!DOCTYPE html>

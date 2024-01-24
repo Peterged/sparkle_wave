@@ -2,6 +2,6 @@
     $username = $_SESSION['username'];
 ?>
 
-<div class="box">
-    <h1>DASHBOARD</h1>
+<div class="box dashboard">
+    <h1>Selamat Datang,  <?= $username ?>!</h1>
 </div>

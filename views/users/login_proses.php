@@ -1,23 +1,30 @@
 <?php 
     session_start();
-    include_once '../../config/database.php';
-    include_once '../../models/users.php';
+    include_once '../../config/koneksi.php';
 
-    $database = new Database();
-    $db = $database->get_connection();
+    if(isset($_POST['submit'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-    $user = new Users($db);
+        $username = htmlspecialchars($username);
+        $password = htmlspecialchars($password);
 
-    $user->username = $_POST['username'];
-    $user->password = $_POST['password'];
+        // Kita mengambil data dari tb_users dimana
+        // username dan password sama dengan yang diinputkan
+        $query = "SELECT * FROM tb_user WHERE username = '$username' AND password = '$password'";
+        $result = mysqli_query($koneksi, $query);
 
-    $user->login();
+        $hasil = mysqli_fetch_assoc($result);
+        print_r($hasil);
 
-    if ($user->id != null) {
-        $_SESSION['id'] = $user->id;
-        $_SESSION['username'] = $user->username;
-        $_SESSION['role'] = $user->role;
-        header('location: ../views/admin_panel/panel.php');
-    } else {
-        header('location: ../../views/users/login.php');
+        if(empty($hasil)) {
+            $_SESSION['pesanError'] = 'Akun tidak ditemukan!';
+            header('location: login.php');
+        }
+        
+        // Jika akun ditemukan
+        $_SESSION['username'] = $username;
+        $_SESSION['role'] = $hasil['role'];
+        header('location: ../admin_panel/panel.php');
     }
+
