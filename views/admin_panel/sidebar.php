@@ -3,10 +3,14 @@
 </head>
 
 <div class="sidebar">
-    <p class="profile-name">Aldovanio - Admin</p>
     <?php
 
-    $role = @$_SESSION['role'];
+    $role = $_SESSION['role'];
+    $username = $_SESSION['username'];
+
+    echo "
+        <p class='profile-name'>$username - $role</p> 
+    ";
 
     if ($role === 'admin') {
         echo "
@@ -32,4 +36,5 @@
     }
 
     ?>
+    <a class="logout-btn" href="../commands/logout.php">Logout</a>
 </div>

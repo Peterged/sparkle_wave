@@ -1,13 +1,13 @@
 <?php
 
-include_once 'config/database.php';
+include_once 'config/koneksi.php';
 
 $pageName = @$_GET['page'] ?? 'login';
 
 if($pageName == 'login') {
-    include_once 'views/users/login.php';
+    header('Location: views/users/login.php');
 } else if($pageName == 'register') {
-    include_once 'views/users/register.php';
+    // code here
 } else if($pageName == 'logout') {
     include_once 'views/users/logout.php';
 } elseif ($pageName == 'panel') {

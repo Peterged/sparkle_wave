@@ -30,3 +30,9 @@ body {
     color: black;
     background-color: white;
 }
+
+/* LOGOUT BTN */
+a.logout-btn {
+    margin-top: auto;
+    border-color: cyan;
+}

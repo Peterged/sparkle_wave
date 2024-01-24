@@ -42,3 +42,9 @@ body {
 .box input.submit:hover {
     background: #0f0f0f;
 }
+
+/* Styling pesan error */
+p.pesanError {
+    color: #fff;
+    margin: 8px;
+}
