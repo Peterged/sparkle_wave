@@ -23,14 +23,13 @@
 
         // Jika password yang diinputkan sama dengan password yang ada di database
 
-
         if(password_verify($password, $dataUser['password'])) {
             $_SESSION['username'] = $dataUser['username'];
             $_SESSION['role'] = $dataUser['role'];
-            // header('location: ../admin_panel/panel.php');
+            header('location: ../admin_panel/panel.php');
         } else {
             $_SESSION['pesanError'] = 'Username atau Password Salah!';
-            // header('location: login.php');
+            header('location: login.php');
         }
 
 

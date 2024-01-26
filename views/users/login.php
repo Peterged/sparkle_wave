@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(@$_SESSION['username']) {
-        header('Location: ../views/admin_panel/panel.php');
+        header('Location: ../admin_panel/panel.php');
         exit;
     }
     $pesanError = '';

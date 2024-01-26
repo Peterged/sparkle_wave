@@ -1,7 +1,7 @@
 <?php
-    $_SESSION['role'] = 'admin';
     if(@$_SESSION['role'] !== 'admin') {
-
+        echo "<h1>ANDA BUKAN ADMIN!</h1>";
+        exit;
     }
 ?>
 
@@ -18,7 +18,7 @@
 <body>
     <h1>Register User</h1>
     <form class="box" action="register_proses.php" method="post">
-        <input type="text" name="nama_lengkap" placeholder="Nama Lengkap" required>
+        <input type="text" name="nama" placeholder="Nama Lengkap" required>
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <select name="id_outlet">
