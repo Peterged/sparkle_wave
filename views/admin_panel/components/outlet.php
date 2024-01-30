@@ -6,6 +6,32 @@
     }
 ?>
 
-<div class="box">
-    <h1>OUTLET</h1>
+<div class="box outlet">
+    <h1 class="title">Data Outlet</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nama</th>
+            <th>alamat</th>
+            <th>tlp</th>
+            <th>Actions</th>
+        </tr>
+        <?php
+            $query = "SELECT * FROM tb_user";
+            $result = mysqli_query($koneksi, $query);
+            while($data = mysqli_fetch_assoc($result)) {
+                echo "
+                    <tr>
+                    <td>$data[id]</td>
+                    <td>$data[nama]</td>
+                    <td>$data[alamat]</td>
+                    <td>$data[tlp]</td>
+                    <td><a href='outlet_edit.php?id=$data[id]'>EDIT</a></td>
+                    <td><a href='outlet_delete.php?id=$data[id]'>DELETE</a></td>
+                    </tr>
+                ";
+            }
+
+        ?>
+    </table>
 </div>

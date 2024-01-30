@@ -18,3 +18,6 @@
     elseif($section == 'transaksi') {
         include_once 'components/transaksi.php';
     }
+    elseif($section == 'laporan') {
+        include_once 'components/laporan.php';
+    }

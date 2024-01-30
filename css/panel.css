@@ -18,3 +18,39 @@ body {
 h1, h2, h3, h4, h5, h6, p, input, select, textarea, div, span {
     color: white;
 }
+
+tr, td, th {
+    color: white;
+}
+
+/* Reset some default styles for better consistency */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* Style the table headers */
+  th {
+    background-color: #121212;
+    color: #333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+  }
+
+  /* Style the table rows */
+  td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  /* Add some hover effect to the table rows */
+  tr:hover {
+    background-color: #121212;
+  }
+
+  /* Add zebra-striping to the table rows */
+  tr:nth-child(even) {
+    background-color: #121212;
+  }
