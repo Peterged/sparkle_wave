@@ -11,6 +11,7 @@
 
         // Kita mengambil data dari tb_users dimana
         // username dan password sama dengan yang diinputkan
+
         $query = "SELECT * FROM tb_user WHERE username = '$username'";
         $result = mysqli_query($koneksi, $query);
 
@@ -31,7 +32,5 @@
             $_SESSION['pesanError'] = 'Username atau Password Salah!';
             header('location: login.php');
         }
-
-
     }
 

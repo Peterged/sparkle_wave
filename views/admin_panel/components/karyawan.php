@@ -5,6 +5,7 @@
         echo "<script>document.body.innerHTML = '$message'</script>";
     }
     @include '../../../config/koneksi.php';
+
 ?>
 
 
@@ -19,12 +20,13 @@
             <th>Role</th>
             <th>Actions</th>
         </tr>
-        <?php
+        <?php 
             $query = "SELECT * FROM tb_user";
             $result = mysqli_query($koneksi, $query);
             while($data = mysqli_fetch_assoc($result)) {
                 echo "
                     <tr>
+
                     <td>$data[nama]</td>
                     <td>$data[id_outlet]</td>
                     <td>$data[username]</td>
@@ -35,7 +37,6 @@
                     </tr>
                 ";
             }
-
         ?>
     </table>
 </div>

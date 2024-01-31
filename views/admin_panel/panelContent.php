@@ -21,3 +21,4 @@
     elseif($section == 'laporan') {
         include_once 'components/laporan.php';
     }
+

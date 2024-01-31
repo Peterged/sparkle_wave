@@ -6,6 +6,7 @@
     }
 ?>
 
+
 <div class="box outlet">
     <h1 class="title">Data Outlet</h1>
     <table>
