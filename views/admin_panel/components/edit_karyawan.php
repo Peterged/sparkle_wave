@@ -19,11 +19,11 @@
         $data = mysqli_fetch_assoc($result);
     ?>
     <h1>Edit Outlet</h1>
-    <form class="box" action="outlet_edit_proses.php" method="post">
+    <form class="box" action="edit_karyawan_proses.php?id=<?= $id ?>" method="post">
         <input type="text" name="nama" placeholder="Nama" value="<?= $data['nama'] ?? '' ?>" autocomplete="off" required>
-        <input type="text" name="alamat" placeholder="Username" value="<?= $data['username'] ?? '' ?>" required>
-        <input type="text" name="tlp" readonly placeholder="Password" value="<?= $data['password'] ?? '' ?>" required>
-        <input type="text" name="tlp" readonly placeholder="Telpon" value="<?= $data['role'] ?? '' ?>" required>
+        <input type="text" name="username" placeholder="Username" value="<?= $data['username'] ?? '' ?>" required>
+        <!-- <input type="text" name="tlp" readonly placeholder="Password" value="<?= $data['password'] ?? '' ?>" required>
+        <input type="text" name="tlp" readonly placeholder="Telpon" value="<?= $data['role'] ?? '' ?>" required> -->
         <input type="submit" class="submit" name="submit" value="EDIT OUTLET">
     </form>
 </body>

@@ -17,7 +17,7 @@
             <th>Actions</th>
         </tr>
         <?php
-            $query = "SELECT * FROM tb_user";
+            $query = "SELECT * FROM tb_outlet";
             $result = mysqli_query($koneksi, $query);
             while($data = mysqli_fetch_assoc($result)) {
                 echo "
@@ -26,8 +26,8 @@
                     <td>$data[nama]</td>
                     <td>$data[alamat]</td>
                     <td>$data[tlp]</td>
-                    <td><a href='outlet_edit.php?id=$data[id]'>EDIT</a></td>
-                    <td><a href='outlet_delete.php?id=$data[id]'>DELETE</a></td>
+                    <td><a href='components/outlet_edit.php?id=$data[id]'>EDIT</a></td>
+                    <td><a href='components/outlet_delete.php?id=$data[id]'>DELETE</a></td>
                     </tr>
                 ";
             }
