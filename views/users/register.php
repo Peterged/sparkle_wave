@@ -1,8 +1,10 @@
 <?php
+session_start();
     if(@$_SESSION['role'] !== 'admin') {
         echo "<h1>ANDA BUKAN ADMIN!</h1>";
         exit;
     }
+    include "../../config/koneksi.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +24,16 @@
         <input type="text" name="username" placeholder="Username" required>
         <input type="password" name="password" placeholder="Password" required>
         <select name="id_outlet">
-            <option value="1">1 | Aldovanio</option>
+            <?php
+
+                $query = "SELECT * FROM tb_outlet";
+                $result = mysqli_query($koneksi, $query);
+                while($data = mysqli_fetch_assoc($result)) {
+                    echo "
+                        <option value='$data[id]'>$data[id] | $data[nama]</option>
+                    ";
+                }
+            ?>
         </select>
         <select name="role">
             <option value="owner">Owner</option>

@@ -9,11 +9,11 @@
     elseif($section == 'karyawan') {
         include_once 'components/karyawan.php';
     }
-    elseif($section == 'package') {
-        include_once 'components/package.php';
+    elseif($section == 'paket') {
+        include_once 'components/paket.php';
     }
-    elseif($section == 'pelanggan') {
-        include_once 'components/pelanggan.php';
+    elseif($section == 'member') {
+        include_once 'components/member.php';
     }
     elseif($section == 'transaksi') {
         include_once 'components/transaksi.php';

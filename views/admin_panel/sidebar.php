@@ -9,7 +9,7 @@
     $username = $_SESSION['username'];
 
     echo "
-        <p class='profile-name'>$username - $role</p> 
+        <p class='profile-name'>$username - $role</p>
     ";
 
     if ($role === 'admin') {
@@ -17,8 +17,8 @@
                 <a href='?page=dashboard'>Dashboard</a>
                 <a href='?page=karyawan'>Karyawan</a>
                 <a href='?page=outlet'>Outlet</a>
-                <a href='?page=package'>Package</a>
-                <a href='?page=pelanggan'>Pelanggan</a>
+                <a href='?page=package'>Paket</a>
+                <a href='?page=member'>Member</a>
                 <a href='?page=transaksi'>Transaksi</a>
                 <a href='?page=report'>Report</a>
             ";
@@ -26,7 +26,7 @@
         echo "
                 <a href='?page=dashboard'>Dashboard</a>
                 <a href='?page=transaksi'>Transaksi</a>
-                <a href='?page=pelanggan'>Pelanggan</a>
+                <a href='?page=member'>Member</a>
                 <a href='?page=report'>Report</a>
             ";
     } elseif ($role === 'owner') {

@@ -7,6 +7,7 @@
 ?>
 
 <div class="box outlet">
+    <a href="tambah_outlet.php">Tambah Outlet</a>
     <h1 class="title">Data Outlet</h1>
     <table>
         <tr>
