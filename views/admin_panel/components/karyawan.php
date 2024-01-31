@@ -18,7 +18,7 @@
             <th>Username</th>
             <th>Password</th>
             <th>Role</th>
-            <th>Actions</th>
+            <th colspan="2">Actions</th>
         </tr>
         <?php
             $query = "SELECT tb_user.nama as nama_user, tb_user.*, tb_outlet.id as outlet_id, tb_outlet.nama as outlet_nama FROM tb_user LEFT JOIN tb_outlet ON tb_user.id_outlet = tb_outlet.id";
