@@ -4,7 +4,6 @@
         $message = '<h1>ANDA BUKAN ADMIN!</h1>';
         echo "<script>document.body.innerHTML = '$message'</script>";
     }
-    @include '../../../config/koneksi.php';
 ?>
 
 
@@ -25,10 +24,6 @@
             $result = mysqli_query($koneksi, $query);
 
             while($data = mysqli_fetch_assoc($result)) {
-                // echo "<pre>";
-                // print_r($data);
-                // echo $data['nama_user'] . ' | ' . $data['outlet_nama'];
-                // echo "</pre>";
                 echo "
                     <tr>
                     <td>$data[nama_user]</td>
@@ -36,12 +31,11 @@
                     <td>$data[username]</td>
                     <td>$data[password]</td>
                     <td>$data[role]</td>
-                    <td><a href='components/edit_karyawan.php?id=$data[id]'>EDIT</a></td>
-                    <td><a href='components/delete_karyawan.php?id=$data[id]'>DELETE</a></td>
+                    <td><a href='?page=edit_karyawan&id=$data[id]'>EDIT</a></td>
+                    <td><a href='?page=delete_karyawan&id=$data[id]'>DELETE</a></td>
                     </tr>
                 ";
             }
-
         ?>
     </table>
 </div>

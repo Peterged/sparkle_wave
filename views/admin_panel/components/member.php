@@ -4,7 +4,6 @@
         $message = '<h1>ANDA BUKAN ADMIN!</h1>';
         echo "<script>document.body.innerHTML = '$message'</script>";
     }
-    @include '../../../config/koneksi.php';
 ?>
 
 

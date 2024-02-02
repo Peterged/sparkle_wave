@@ -15,7 +15,7 @@
             <th>Nama</th>
             <th>alamat</th>
             <th>tlp</th>
-            <th>Actions</th>
+            <th colspan="2">Actions</th>
         </tr>
         <?php
             $query = "SELECT * FROM tb_outlet";

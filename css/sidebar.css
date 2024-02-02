@@ -28,8 +28,15 @@ body {
 .sidebar p.profile-name {
     margin-bottom: 20px;
     padding: 10px;
-    color: black;
-    background-color: white;
+    display: grid;
+    font-weight: 700;
+    font-size: 20px;
+    border: 1px solid white;
+}
+
+.sidebar p.profile-name span {
+    font-size: 16px;
+    font-weight: 400;
 }
 
 /* LOGOUT BTN */

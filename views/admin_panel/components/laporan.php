@@ -7,5 +7,5 @@
 ?>
 
 <div class="box">
-    <h1>REPORT</h1>
+    <h1>LAPORAN</h1>
 </div>

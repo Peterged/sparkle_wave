@@ -4,8 +4,8 @@
         header('Location: ../admin_panel/panel.php');
         exit;
     }
+    
     $pesanError = '';
-
     // jika pesan error ada dalam session
     // maka kita ambil, memasukkan ke variabel $pesanError
     // dan menghapus session pesanError
@@ -27,7 +27,7 @@
 </head>
 
 <body>
-    <h1>Logins</h1>
+    <h1>Login</h1>
     <form class="box" action="login_proses.php" method="post">
         <input type="text" name="username" placeholder="Username" autocomplete="off" required>
         <input type="password" name="password" placeholder="Password" required>

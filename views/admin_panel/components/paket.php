@@ -4,7 +4,6 @@
         $message = '<h1>ANDA BUKAN ADMIN!</h1>';
         echo "<script>document.body.innerHTML = '$message'</script>";
     }
-    @include '../../../config/koneksi.php';
 ?>
 
 
@@ -18,7 +17,7 @@
             <th>Jenis</th>
             <th>Nama Paket</th>
             <th>Harga</th>
-            <th>Actions</th>
+            <th colspan="2">Actions</th>
         </tr>
         <?php
             $query = "SELECT *, tb_outlet.id, tb_outlet.nama FROM tb_paket LEFT JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id";

@@ -1,10 +1,10 @@
 <?php
 session_start();
-    if(@$_SESSION['role'] !== 'admin') {
-        echo "<h1>ANDA BUKAN ADMIN!</h1>";
-        exit;
-    }
-    include "../../config/koneksi.php";
+if (@$_SESSION['role'] !== 'admin') {
+    echo "<h1>ANDA BUKAN ADMIN!</h1>";
+    exit;
+}
+include "../../config/koneksi.php";
 ?>
 
 <!DOCTYPE html>
@@ -26,13 +26,13 @@ session_start();
         <select name="id_outlet">
             <?php
 
-                $query = "SELECT * FROM tb_outlet";
-                $result = mysqli_query($koneksi, $query);
-                while($data = mysqli_fetch_assoc($result)) {
-                    echo "
+            $query = "SELECT * FROM tb_outlet";
+            $result = mysqli_query($koneksi, $query);
+            while ($data = mysqli_fetch_assoc($result)) {
+                echo "
                         <option value='$data[id]'>$data[id] | $data[nama]</option>
                     ";
-                }
+            }
             ?>
         </select>
         <select name="role">
