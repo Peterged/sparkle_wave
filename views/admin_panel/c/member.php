@@ -8,7 +8,7 @@
 
 
 <div class="box karyawan">
-    <a href="components/tambah/tambah_member.php">Tambah Member</a>
+    <a href="c/tambah/tambah_member.php">Tambah Member</a>
     <h1 class="title">Data Member</h1>
     <table>
         <tr>
@@ -35,8 +35,8 @@
                     <td>$data[alamat]</td>
                     <td>$data[jenis_kelamin]</td>
                     <td>$data[tlp]</td>
-                    <td><a href='components/edit_member.php?id=$data[id]'>EDIT</a></td>
-                    <td><a href='components/delete_member.php.php?id=$data[id]'>DELETE</a></td>
+                    <td><a href='c/edit_member.php?id=$data[id]'>EDIT</a></td>
+                    <td><a href='c/delete_member.php.php?id=$data[id]'>DELETE</a></td>
                     </tr>
                 ";
             }

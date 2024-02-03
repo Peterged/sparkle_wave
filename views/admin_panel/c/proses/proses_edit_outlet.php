@@ -10,4 +10,4 @@ $query = "UPDATE tb_outlet SET nama = '$nama', alamat = '$alamat', tlp = '$tlp' 
 
 mysqli_query($koneksi, $query);
 
-header('Location: ../panel.php?page=outlet');
+header('Location: ../../panel.php?page=outlet');

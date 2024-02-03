@@ -4,6 +4,8 @@
         $message = "<h1>ANDA BUKAN ADMIN!</h1>";
         echo "<script>document.body.innerHTML = '$message';</script>";
     }
+
+    $stylePath = "css_panel/form.css";
 ?>
 
 <div class="box">

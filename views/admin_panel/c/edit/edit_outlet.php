@@ -7,13 +7,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../css/login.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>Edit Outlet</title>
 </head>
 
 <body>
     <?php
-    include '../../../config/koneksi.php';
+    include '../../db/includeKoneksi.php';
         $id = @$_GET['id'];
         $query = "SELECT * FROM tb_outlet WHERE id = '$id'";
 

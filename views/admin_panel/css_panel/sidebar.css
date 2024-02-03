@@ -1,5 +1,6 @@
 body {
     padding-left: 300px;
+    font-family: "Roboto", sans-serif;
 }
 
 .sidebar {
@@ -44,3 +45,4 @@ a.logout-btn {
     margin-top: auto;
     border-color: cyan;
 }
+

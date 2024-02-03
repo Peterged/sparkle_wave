@@ -1,0 +1,36 @@
+/* Reset some default styles for better consistency */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Style the table headers */
+th {
+  background-color: #121212;
+  color: black;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+}
+
+/* Style the table rows */
+td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+td a {
+  color: rgb(175, 175, 255);
+  font-weight: bold;
+}
+
+tr {
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #121212;
+}

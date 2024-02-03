@@ -1,6 +1,6 @@
 <?php
 
-include '../../../config/koneksi.php';
+include '../../db/includeKoneksi.php';
 
 $id = @$_GET['id'];
 
