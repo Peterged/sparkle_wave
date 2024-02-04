@@ -13,19 +13,20 @@
     <table class="tabel-data">
         <tr>
             <th>ID</th>
+            <th>Nama Paket</th>
             <th>Nama Outlet</th>
             <th>Jenis</th>
-            <th>Nama Paket</th>
             <th>Harga</th>
             <th colspan="2">Actions</th>
         </tr>
         <?php
-            $query = "SELECT *, tb_outlet.id, tb_outlet.nama FROM tb_paket LEFT JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id";
+            $query = "SELECT tb_outlet.id AS outlet_id, tb_outlet.nama, tb_paket.* FROM tb_paket LEFT JOIN tb_outlet ON tb_paket.id_outlet = tb_outlet.id";
             $result = mysqli_query($koneksi, $query);
 
             while($data = mysqli_fetch_assoc($result)) {
                 echo "
                     <tr>
+                    <td>$data[id]</td>
                     <td>$data[nama_paket]</td>
                     <td>$data[nama]</td>
                     <td>$data[jenis]</td>

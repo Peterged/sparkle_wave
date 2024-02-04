@@ -11,6 +11,10 @@ $id = @$_GET['id'];
 $query = "SELECT tb_transaksi.*, tbdt.id_transaksi, tbdt.id_paket, tbdt.qty FROM tb_transaksi INNER JOIN tb_detail_transaksi tbdt ON tb_transaksi.id = tbdt.id_transaksi WHERE tb_transaksi.id = '$id'";
 $hasil = mysqli_query($koneksi, $query);
 $data = mysqli_fetch_assoc($hasil);
+
+if(!$data) {
+    echo "<script>alert('Detail Transaksi tidak ditemukan!');window.location.replace('?page=transaksi');</script>";
+}
 ?>
 <div class="box detail-transaksi">
     <div class="form-container">

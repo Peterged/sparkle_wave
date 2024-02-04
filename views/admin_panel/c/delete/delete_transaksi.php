@@ -6,4 +6,4 @@ $query = "DELETE FROM tb_transaksi WHERE id = '$id'";
 
 mysqli_query($koneksi, $query);
 
-header("Location: ?page=outlet");
+header("Location: ?page=transaksi");
