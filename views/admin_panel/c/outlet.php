@@ -7,7 +7,7 @@ if ($role != 'admin') {
 ?>
 
 <div class="box outlet">
-    <a href="tambah_outlet.php">Tambah Outlet</a>
+    <a href="?page=tambah_outlet">Tambah Outlet</a>
     <h1 class="title">Data Outlet</h1>
     <table class="tabel-data">
         <tr>
@@ -18,7 +18,7 @@ if ($role != 'admin') {
             <th colspan="2">Actions</th>
         </tr>
         <?php
-        // $query = "SELECT *, tb_user.id FROM tb_outlet FULL JOIN tb_user ON tb_outlet.id = tb_user.id_outlet WHERE tb_user.role = 'admin'";
+        // HARUS DIPERBAIKI, TERLALU SUSAH DIBACA
         $query = "SELECT tb_outlet.*, tb_user.id AS user_id FROM tb_outlet LEFT JOIN tb_user ON tb_outlet.id = tb_user.id_outlet
         UNION
         SELECT tb_outlet.*, tb_user.id AS user_id FROM tb_outlet RIGHT JOIN tb_user ON tb_outlet.id = tb_user.id_outlet";
@@ -40,11 +40,11 @@ if ($role != 'admin') {
                     <td>$data[nama]</td>
                     <td>$data[alamat]</td>
                     <td>$data[tlp]</td>
-                    <td><a href='c/outlet_edit.php?id=$data[id]'>EDIT</a></td>
+                    <td><a href='?page=edit_outlet&id=$data[id]'>EDIT</a></td>
                 ";
 
             if (!$data['is_used']) {
-                echo "<td><a href='c/delete/outlet_delete.php?id=$data[id]'>DELETE</a></td>";
+                echo "<td><a href='?page=delete_outlet&id=$data[id]'>DELETE</a></td>";
             } else {
                 echo "<td>-</td>";
                 // echo "<td></td>";
