@@ -1,36 +1,36 @@
 /* Reset some default styles for better consistency */
-table {
+table.tabel-data {
   border-collapse: collapse;
   width: 100%;
   margin-bottom: 20px;
 }
 
 /* Style the table headers */
-th {
+table.tabel-data th {
   background-color: #121212;
-  color: black;
+  color: white;
   font-weight: bold;
   padding: 10px;
   text-align: left;
 }
 
 /* Style the table rows */
-td {
+table.tabel-data td {
   border-bottom: 1px solid #ddd;
   padding: 10px;
 }
 
-td a {
+table.tabel-data td a {
   color: rgb(175, 175, 255);
   font-weight: bold;
 }
 
-tr {
+table.tabel-data tr {
     border-top: 1px solid #ddd;
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }
 
-tr:hover {
+table.tabel-data tr:hover {
   background-color: #121212;
 }

@@ -36,11 +36,11 @@ include "../../config/koneksi.php";
             ?>
         </select>
         <select name="role">
-            <option value="owner">Owner</option>
-            <option value="admin">Admin</option>
             <option value="kasir">Kasir</option>
+            <option value="admin">Admin</option>
+            <option value="owner">Owner</option>
         </select>
-        <input type="submit" class="submit" name="submit" value="LOGIN">
+        <input type="submit" class="submit" name="submit" value="REGISTER">
     </form>
 </body>
 

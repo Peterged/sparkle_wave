@@ -1,7 +1,7 @@
 <?php
     $role = @$_SESSION['role'];
-    if($role != 'admin') {
-        $message = '<h1>ANDA BUKAN ADMIN!</h1>';
+    if($role == 'owner') {
+        $message = '<h1>ANDA BUKAN ADMIN atau KASIR!</h1>';
         echo "<script>document.body.innerHTML = '$message'</script>";
     }
 ?>
@@ -10,7 +10,7 @@
 <div class="box karyawan">
     <a href="c/tambah/tambah_member.php">Tambah Member</a>
     <h1 class="title">Data Member</h1>
-    <table>
+    <table class="tabel-data">
         <tr>
             <th>ID</th>
             <th>Nama</th>
@@ -20,14 +20,12 @@
             <th>Actions</th>
         </tr>
         <?php
+        // ! FOCUS ON THIS PART
+
             $query = "SELECT * from tb_member";
             $result = mysqli_query($koneksi, $query);
 
             while($data = mysqli_fetch_assoc($result)) {
-                // echo "<pre>";
-                // print_r($data);
-                // echo $data['nama_user'] . ' | ' . $data['outlet_nama'];
-                // echo "</pre>";
                 echo "
                     <tr>
                     <td>$data[id]</td>
@@ -35,12 +33,13 @@
                     <td>$data[alamat]</td>
                     <td>$data[jenis_kelamin]</td>
                     <td>$data[tlp]</td>
-                    <td><a href='c/edit_member.php?id=$data[id]'>EDIT</a></td>
-                    <td><a href='c/delete_member.php.php?id=$data[id]'>DELETE</a></td>
-                    </tr>
+                    <td><a href='?page=edit_member&id=$data[id]'>EDIT</a></td>  
                 ";
-            }
 
+
+                $temp = "<td><a href='?page=delete_member&id=$data[id]'>DELETE</a></td>
+                </tr>";
+            }
         ?>
     </table>
 </div>

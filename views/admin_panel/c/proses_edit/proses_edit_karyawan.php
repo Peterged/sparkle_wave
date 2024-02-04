@@ -1,5 +1,4 @@
 <?php
-include '../../db/includeKoneksi.php';
 $id = @$_GET['id'];
 
 $nama = $_POST['nama'];
@@ -10,4 +9,4 @@ $query = "UPDATE tb_user SET nama = '$nama', username = '$username', role = '$ro
 
 mysqli_query($koneksi, $query);
 
-header('Location: ../../panel.php?page=karyawan');
+header('Location: ?page=karyawan');

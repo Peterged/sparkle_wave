@@ -1,14 +1,6 @@
-
-
-
-<head>
-    <link rel="stylesheet" href="../../../../css/register.css">   
-    <title>Tambah Member</title>
-</head>
-
-<body>
-    <h1>Tambah Member</h1>
-    <form class="box" action="tambah_member_proses.php" method="post">
+<div class="form-container">
+    <h1 class="title">Tambah Member</h1>
+    <form class="box-form" action="?page=proses_tambah_member" method="post">
         <input type="text" name="nama" placeholder="Nama" autocomplete="off" required>
         <input type="text" name="alamat" placeholder="Alamat" required>
         <select name="kelamin" id="" required>
@@ -18,5 +10,5 @@
         <input type="text" name="tlp" placeholder="Telpon" required>
         <input type="submit" class="submit" name="submit" value="TAMBAH MEMBER">
     </form>
-</body>
-</html>
+</div>
+

@@ -1,0 +1,126 @@
+body {
+    min-height: auto;
+    height: min-content !important;
+}
+.transaksi {
+  padding-top: 30px;
+  width: 100%;
+  height: min-content;
+  max-height: 100vh;
+
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.transaksi-content {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.transaksi-header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 15px;
+}
+
+.transaksi-100 {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.transaksi-header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  word-break: break-all;
+  align-items: center;
+}
+
+.transaksi-content .transaksi-body {
+  width: 100%;
+}
+
+table.transaksi-header-item {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.transaksi-header-item tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.transaksi-body tr {
+    border: none !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5) !important;
+}
+
+.transaksi-header-item tr th {
+  width: max-content;
+  text-align: left;
+  padding: 5px 15px;
+  
+}
+
+.transaksi-header-item tr td {
+    text-align: right;
+    padding: 7px 15px;
+}
+
+.transaksi .transaksi-body tr td{
+  padding: 7px 15px;
+}
+
+.transaksi tr,
+.transaksi td,
+.transaksi th {
+  font-size: 14px !important;
+}
+
+.transaksi tr.title-transaksi * {
+  font-size: 18px !important  ;
+}
+
+/* .transaksi-body {
+  
+}
+
+table {
+ 
+}
+
+th {
+
+}
+
+td {
+
+} */
+
+@media print {
+  .sidebar {
+    display: none !important;
+  }
+  body {
+    padding-left: 0;
+    height: min-content;
+  }
+  .form-container {
+    min-height: auto;
+    padding: 0;
+    margin: 0;
+    margin-top: 110px;
+    justify-content: flex-start;
+  }
+  .transaksi {
+    padding-top: 65px;
+  }
+  .transaksi-header-item tr {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  }
+}

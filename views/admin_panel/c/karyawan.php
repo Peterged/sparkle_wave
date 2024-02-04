@@ -10,7 +10,7 @@ if ($role != 'admin') {
 <div class="box karyawan">
     <a href="../users/register.php">Tambah Karyawan</a>
     <h1 class="title">Data karyawan</h1>
-    <table>
+    <table class="tabel-data">
         <tr>
             <th>Nama</th>
             <th>Nama Outlet</th>
@@ -29,10 +29,9 @@ if ($role != 'admin') {
             <td>$data[nama_user]</td>
             <td>$data[outlet_nama]</td>
             <td>$data[username]</td>
-            <td><a href='c/edit/edit_password_karyawan.php?id=$data[id]'>EDIT PASSWORD</a></td>
+            <td><a href='?page=edit_password_karyawan&id=$data[id]'>EDIT PASSWORD</a></td>
             <td>$data[role]</td>
-            <td><a href='c/edit/edit_karyawan.php?id=$data[id]'>EDIT</a></td>
-            
+            <td><a href='?page=edit_karyawan&id=$data[id]'>EDIT</a></td>
             ";
             
             if ($data['nama_user'] == $_SESSION['username']) {
@@ -40,7 +39,7 @@ if ($role != 'admin') {
                 continue;
             }
             else {
-                echo "<td><a href='c/delete/delete_karyawan.php?id=$data[id]'>DELETE</a></td>";
+                echo "<td><a href='?page=delete_karyawan&id=$data[id]'>DELETE</a></td>";
             }
         }
         ?>

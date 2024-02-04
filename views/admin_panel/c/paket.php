@@ -8,9 +8,9 @@
 
 
 <div class="box karyawan">
-    <a href="c/tambah/tambah_paket.php">Tambah Paket</a>
+    <a href="?page=tambah_paket">Tambah Paket</a>
     <h1 class="title">Data Paket</h1>
-    <table>
+    <table class="tabel-data">
         <tr>
             <th>ID</th>
             <th>Nama Outlet</th>
@@ -30,8 +30,8 @@
                     <td>$data[nama]</td>
                     <td>$data[jenis]</td>
                     <td>$data[harga]</td>
-                    <td><a href='c/edit_paket.php?id=$data[id]'>EDIT</a></td>
-                    <td><a href='c/delete_paket.php?id=$data[id]'>DELETE</a></td>
+                    <td><a href='?page=edit_paket&id=$data[id]'>EDIT</a></td>
+                    <td><a href='?page=delete_paket&id=$data[id]'>DELETE</a></td>
                     </tr>
                 ";
             }

@@ -14,53 +14,63 @@
 
         case 'transaksi': include_once 'c/transaksi.php'; break;
 
-        case 'laporan': include_once 'c/laporan.php'; break;
+        case 'detail_transaksi': include_once 'c/detail_transaksi.php'; break;
 
         case 'register': include_once '../users/register.php'; break;
 
 
         // TAMBAH
-        // case 'tambah_karyawan': include_once 'c/tambah/tambah_karyawan.php'; break;
+        case 'tambah_karyawan': include_once 'c/tambah/tambah_karyawan.php'; break;
 
-        // case 'tambah_outlet': include_once 'c/tambah/tambah_outlet.php'; break;
+        case 'tambah_outlet': include_once 'c/tambah/tambah_outlet.php'; break;
 
-        // case 'tambah_paket': include_once 'c/tambah/tambah_paket.php'; break;
+        case 'tambah_paket': include_once 'c/tambah/tambah_paket.php'; break;
 
-        // case 'tambah_member': include_once 'c/tambah/tambah_member.php'; break;
+        case 'tambah_member': include_once 'c/tambah/tambah_member.php'; break;
 
-        // case 'tambah_transaksi': include_once 'c/tambah/tambah_transaksi.php'; break;
+        case 'tambah_transaksi': include_once 'c/tambah/tambah_transaksi.php'; break;
 
-        // case 'tambah_laporan': include_once 'c/tambah/tambah_laporan.php'; break;
+
+        // PROSES TAMBAH
+        case 'proses_tambah_karyawan': include_once 'c/proses_tambah/proses_tambah_karyawan.php'; break;
+
+        case 'proses_tambah_outlet': include_once 'c/proses_tambah/proses_tambah_outlet.php'; break;
+
+        case 'proses_tambah_paket': include_once 'c/proses_tambah/proses_tambah_paket.php'; break;
+
+        case 'proses_tambah_member': include_once 'c/proses_tambah/proses_tambah_member.php'; break;
+
+        case 'proses_tambah_transaksi': include_once 'c/proses_tambah/proses_tambah_transaksi.php'; break;
 
 
         // EDIT
-        // case 'edit_karyawan': include_once 'c/edit/edit_karyawan.php'; break;
+        case 'edit_karyawan': include_once 'c/edit/edit_karyawan.php'; break;
 
-        // case 'edit_password_karyawan': include_once 'c/edit/edit_password_karyawan.php'; break;
+        case 'edit_password_karyawan': include_once 'c/edit/edit_password_karyawan.php'; break;
 
-        // case 'edit_outlet': include_once 'c/edit/edit_outlet.php'; break;
+        case 'edit_outlet': include_once 'c/edit/edit_outlet.php'; break;
 
-        // case 'edit_paket': include_once 'c/edit/edit_paket.php'; break;
+        case 'edit_paket': include_once 'c/edit/edit_paket.php'; break;
 
-        // case 'edit_member': include_once 'c/edit/edit_member.php'; break;
+        case 'edit_member': include_once 'c/edit/edit_member.php'; break;
 
-        // case 'edit_transaksi': include_once 'c/edit/edit_transaksi.php'; break;
+        case 'edit_transaksi': include_once 'c/edit/edit_transaksi.php'; break;
 
-        // case 'edit_laporan': include_once 'c/edit/edit_laporan.php'; break;
+        case 'edit_laporan': include_once 'c/edit/edit_laporan.php'; break;
 
 
         // PROSES EDIT
-        case 'proses_edit_karyawan': include_once 'c/edit/proses_edit_karyawan'; break;
+        case 'proses_edit_karyawan': include_once 'c/proses_edit/proses_edit_karyawan.php'; break;
 
-        case 'proses_edit_outlet': include_once 'c/edit/proses_edit_outlet'; break;
+        case 'proses_edit_password_karyawan': include_once 'c/proses_edit/proses_edit_password_karyawan.php'; break;
 
-        case 'proses_edit_paket': include_once 'c/edit/proses_edit_paket'; break;
+        case 'proses_edit_outlet': include_once 'c/proses_edit/proses_edit_outlet.php'; break;
 
-        case 'proses_edit_member': include_once 'c/edit/proses_edit_member'; break;
+        case 'proses_edit_paket': include_once 'c/proses_edit/proses_edit_paket.php'; break;
 
-        case 'proses_edit_transaksi': include_once 'c/edit/proses_edit_transaksi'; break;
+        case 'proses_edit_member': include_once 'c/proses_edit/proses_edit_member.php'; break;
 
-        case 'proses_edit_laporan': include_once 'c/edit/proses_edit_laporan'; break;
+        case 'proses_edit_transaksi': include_once 'c/proses_edit/proses_edit_transaksi.php'; break;
 
 
         // DELETE
@@ -74,9 +84,6 @@
 
         case 'delete_transaksi': include_once 'c/delete/delete_transaksi.php'; break;
 
-        case 'delete_laporan': include_once 'c/delete/delete_laporan.php'; break;
-
-
         // DEFAULT (jika tidak ada halaman)
-        default: include_once 'c/dashboard.php'; break;
+        default: echo "<h1>NGEBUG CUY - $section</h1>"; break;
     }

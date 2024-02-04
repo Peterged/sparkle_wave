@@ -1,0 +1,71 @@
+body {
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+  color: white;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  overflow-y: auto;
+}
+
+.box-form h1 {
+  text-align: center;
+}
+.box-form {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  width: 350px;
+  min-height: 120px;
+  height: auto;
+  gap: 17px;
+}
+
+.box-form input,
+.box-form select,
+.box-form textarea {
+  /* color-scheme: dark; itu khusus untuk input type=date supaya tombolnya kelihatan */
+  color-scheme: dark;
+  outline: none;
+  padding: 10px;
+  background: none;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  color: white;
+  transition: 150ms ease-in-out;
+}
+
+.box-form input:disabled,
+.box-form select:disabled,
+.box-form textarea:disabled {
+  background-color: #2f2f2f;
+  color: #616161;
+}
+
+.box-form input:focus {
+  border: 1px solid #616161;
+}
+
+.box-form input.submit {
+  color: white;
+  margin-top: auto;
+  cursor: pointer;
+}
+
+.box-form input.submit:hover {
+  background: #0f0f0f;
+}
+
+.box-form select option {
+  background-color: black;
+}

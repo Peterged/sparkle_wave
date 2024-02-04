@@ -1,5 +1,4 @@
 <?php
-include '../../../config/koneksi.php';
 $id = @$_GET['id'];
 
 $nama = $_POST['nama'];
@@ -10,4 +9,4 @@ $query = "UPDATE tb_outlet SET nama = '$nama', alamat = '$alamat', tlp = '$tlp' 
 
 mysqli_query($koneksi, $query);
 
-header('Location: ../../panel.php?page=outlet');
+header('Location: ?page=outlet');

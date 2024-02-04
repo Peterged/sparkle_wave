@@ -1,2 +1,2 @@
 <?php 
-    include_once '../../../../config/koneksi.php';
+    include_once '../../config/koneksi.php';

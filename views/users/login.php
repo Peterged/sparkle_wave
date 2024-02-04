@@ -4,16 +4,6 @@
         header('Location: ../admin_panel/panel.php');
         exit;
     }
-    
-    $pesanError = '';
-    // jika pesan error ada dalam session
-    // maka kita ambil, memasukkan ke variabel $pesanError
-    // dan menghapus session pesanError
-    // jika tidak ada, maka $pesanError kosong
-    if(isset($_SESSION['pesanError'])) {
-        $pesanError = $_SESSION['pesanError'];
-        unset($_SESSION['pesanError']);
-    }
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +22,6 @@
         <input type="text" name="username" placeholder="Username" autocomplete="off" required>
         <input type="password" name="password" placeholder="Password" required>
         <input type="submit" class="submit" name="submit" value="LOGIN">
-        <p class="pesanError"><?= $pesanError ?></p>
     </form>
 </body>
 </html>
