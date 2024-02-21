@@ -19,11 +19,11 @@ if ($role != 'admin') {
         </tr>
         <?php
         // HARUS DIPERBAIKI, TERLALU SUSAH DIBACA
-        $query = "SELECT tb_outlet.*, tb_user.id AS user_id FROM tb_outlet LEFT JOIN tb_user ON tb_outlet.id = tb_user.id_outlet
-        UNION
-        SELECT tb_outlet.*, tb_user.id AS user_id FROM tb_outlet RIGHT JOIN tb_user ON tb_outlet.id = tb_user.id_outlet";
+        // $query = "SELECT tb_outlet.*, tb_user.id AS user_id FROM tb_outlet LEFT JOIN tb_user ON tb_outlet.id = tb_user.id_outlet
+        // UNION
+        // SELECT tb_outlet.*, tb_user.id AS user_id FROM tb_outlet RIGHT JOIN tb_user ON tb_outlet.id = tb_user.id_outlet";
 
-        $query = "SELECT tb_outlet.*, 
+        $query = "SELECT tb_outlet.*,
         (SELECT COUNT(*) FROM (
             SELECT id_outlet FROM tb_user
             UNION ALL
@@ -36,7 +36,7 @@ if ($role != 'admin') {
         while ($data = mysqli_fetch_assoc($result)) {
             echo "
                     <tr>
-                    <td>$data[id]</td>   
+                    <td>$data[id]</td>
                     <td>$data[nama]</td>
                     <td>$data[alamat]</td>
                     <td>$data[tlp]</td>

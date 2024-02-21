@@ -2,7 +2,7 @@
 
 $id = @$_GET['id'];
 
-$query = "DELETE FROM tb_user WHERE id = '$id'";
+$query = "DELETE FROM tb_outlet WHERE id = '$id'";
 
 mysqli_query($koneksi, $query);
 

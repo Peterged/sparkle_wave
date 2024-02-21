@@ -16,7 +16,7 @@ $data = mysqli_fetch_assoc($result);
                 $result = mysqli_query($koneksi, $query);
                 while($dataOutlet = mysqli_fetch_assoc($result)) {
                     echo "
-                        <option value='$dataOutlet[id]' 
+                        <option value='$dataOutlet[id]'
                             ". ($dataOutlet['id'] == $data['id_outlet'] ? 'selected' : '') . "
                         >$dataOutlet[id] | $dataOutlet[nama]</option>
                     ";
@@ -26,32 +26,32 @@ $data = mysqli_fetch_assoc($result);
         <select name="jenis" id="">
             <option value="" disabled selected> -- Pilih Jenis -- </option>
             <option
-                value="kiloan" 
+                value="kiloan"
                 <?php if ($data['jenis'] == 'kiloan') {echo "selected";} ?>
             >
               Kiloan
             </option>
-            <option 
-                value="selimut" 
+            <option
+                value="selimut"
                 <?php if ($data['jenis'] == 'selimut') {echo "selected";} ?>
             >
               Selimut
             </option>
-            <option 
-                value="bed_cover" 
+            <option
+                value="bed_cover"
                 <?php if ($data['jenis'] == 'bed_cover') {echo "selected";} ?>
             >
               Bed Cover
             </option>
-            <option 
-                value="kaos" 
+            <option
+                value="kaos"
                 <?php if ($data['jenis'] == 'kaos') {echo "selected";} ?>
             >
               Kaos
             </option>
-            <option 
-                value="lainnya" 
-                <?php if ($data['jenis'] == 'lainnya') {echo "selected";} ?>
+            <option
+                value="lain"
+                <?php if ($data['jenis'] == 'lain') {echo "selected";} ?>
             >
               Lainnya
             </option>

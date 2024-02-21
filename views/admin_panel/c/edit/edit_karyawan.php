@@ -18,12 +18,12 @@ $data = mysqli_fetch_assoc($result);
                                     } ?>>
                 Admin
             </option>
-            <option value="admin" <?php if ($data['role'] == 'kasir') {
+            <option value="kasir" <?php if ($data['role'] == 'kasir') {
                                         echo "selected";
                                     } ?>>
                 Kasir
             </option>
-            <option value="admin" <?php if ($data['role'] == 'owner') {
+            <option value="owner" <?php if ($data['role'] == 'owner') {
                                         echo "selected";
                                     } ?>>
                 Owner

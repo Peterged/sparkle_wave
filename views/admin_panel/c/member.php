@@ -8,7 +8,7 @@
 
 
 <div class="box karyawan">
-    <a href="c/tambah/tambah_member.php">Tambah Member</a>
+    <a href="?page=tambah_member">Tambah Member</a>
     <h1 class="title">Data Member</h1>
     <table class="tabel-data">
         <tr>
@@ -17,7 +17,7 @@
             <th>Alamat</th>
             <th>Jenis Kelamin</th>
             <th>Telpon</th>
-            <th>Actions</th>
+            <th colspan="2">Actions</th>
         </tr>
         <?php
         // ! FOCUS ON THIS PART
@@ -33,12 +33,15 @@
                     <td>$data[alamat]</td>
                     <td>$data[jenis_kelamin]</td>
                     <td>$data[tlp]</td>
-                    <td><a href='?page=edit_member&id=$data[id]'>EDIT</a></td>  
+                    <td><a href='?page=edit_member&id=$data[id]'>EDIT</a></td>
                 ";
 
+                $temp = "<td><a href='?page=delete_member&id=$data[id]'>DELETE</a></td>";
 
-                $temp = "<td><a href='?page=delete_member&id=$data[id]'>DELETE</a></td>
-                </tr>";
+                echo $temp;
+
+                echo "</tr>";
+
             }
         ?>
     </table>
