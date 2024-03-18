@@ -40,8 +40,8 @@
         <input type="datetime-local" name="batas_waktu" id="" placeholder="Batas Waktu" value="<?= $data['batas_waktu']; ?>" required>
         <input type="datetime-local" name="tgl_bayar" placeholder="Optional: Tanggal Bayar" id="" value="<?= $data['tgl_bayar']; ?>" required>
         <input type="number" name="biaya_tambahan" placeholder="0, jika tidak ada Biaya Tambahan" id="" value="<?= $data['biaya_tambahan']; ?>" required>
-        <input type="number" name="diskon" id="" placeholder="0" readonly value="<?= $data['diskon']; ?>" required>
-        <input type="number" name="pajak" id="" placeholder="Pajak, contoh: 5000" value="<?= $data['pajak']; ?>" required>
+        <input type="number" name="diskon" id="" placeholder="0" readonly value="<?= $data['diskon']; ?>" value="0" readonly>
+        <input type="number" name="pajak" value="0.075" id="" placeholder="0.075" value="<?= $data['pajak']; ?>" required readonly>
         <select name="status" id="" required>
             <option value="" disabled selected> -- Pilih Status -- </option>
             <option 

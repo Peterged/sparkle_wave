@@ -47,6 +47,7 @@
 
                 
                 echo "<td><a href='?page=delete_transaksi&id=$data[id]'>DELETE</a></td>";
+                echo "<td><a href='?page=tambah_transaksi_paket&id_transaksi=$data[id]'>PAKET</a></td>";
 
                 if($role == 'admin' || $role == 'kasir') {
                     echo "<td><a href='?page=detail_transaksi&id=$data[id]'>DETAIL</a></td>";

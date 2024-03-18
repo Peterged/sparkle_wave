@@ -19,6 +19,8 @@
         if(password_verify($password, $dataUser['password'])) {
             $_SESSION['username'] = $dataUser['username'];
             $_SESSION['role'] = $dataUser['role'];
+            $_SESSION['id_user'] = $dataUser['id'];
+            $_SESSION['id_outlet'] = $dataUser['id_outlet'];
             header('location: ../admin_panel/panel.php');
         } else {
             echo "<script>alert('Username atau Password Salah!');window.location.href='login.php'</script>";

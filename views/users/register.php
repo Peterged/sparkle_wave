@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (@$_SESSION['role'] !== 'admin') {
     echo "<h1>ANDA BUKAN ADMIN!</h1>";
     exit;

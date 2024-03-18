@@ -2,7 +2,6 @@
 $id = @$_GET['id'];
 
 $password = $_POST['password'];
-
 $password = password_hash($password, PASSWORD_DEFAULT);
 // $username = $_POST['tlp'];
 

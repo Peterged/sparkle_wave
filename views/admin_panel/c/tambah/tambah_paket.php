@@ -20,7 +20,7 @@
             <option value="kaos">Kaos</option>
             <option value="lain">Lain</option>
         </select>
-        <input type="text" name="nama_paket" placeholder="Nama Paket" autocomplete="off" required>
+        
         <input type="number" name="harga" placeholder="Harga, contoh: 10000" required>
         <input type="submit" class="submit" name="submit" value="TAMBAH PAKET">
     </form>

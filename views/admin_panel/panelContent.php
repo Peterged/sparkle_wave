@@ -53,7 +53,6 @@
         case 'edit_paket': include_once 'c/edit/edit_paket.php'; break;
 
         case 'edit_member': include_once 'c/edit/edit_member.php'; break;
-
         case 'edit_transaksi': include_once 'c/edit/edit_transaksi.php'; break;
 
         case 'edit_laporan': include_once 'c/edit/edit_laporan.php'; break;
@@ -61,17 +60,18 @@
 
         // PROSES EDIT
         case 'proses_edit_karyawan': include_once 'c/proses_edit/proses_edit_karyawan.php'; break;
-
+        
         case 'proses_edit_password_karyawan': include_once 'c/proses_edit/proses_edit_password_karyawan.php'; break;
-
+        
         case 'proses_edit_outlet': include_once 'c/proses_edit/proses_edit_outlet.php'; break;
-
+        
         case 'proses_edit_paket': include_once 'c/proses_edit/proses_edit_paket.php'; break;
-
+        
         case 'proses_edit_member': include_once 'c/proses_edit/proses_edit_member.php'; break;
-
+        
         case 'proses_edit_transaksi': include_once 'c/proses_edit/proses_edit_transaksi.php'; break;
 
+        case 'proses_tambah_transaksi_paket': include_once 'c/proses_tambah/proses_tambah_transaksi_paket.php'; break;
 
         // DELETE
         case 'delete_karyawan': include_once 'c/delete/delete_karyawan.php'; break;
@@ -83,6 +83,8 @@
         case 'delete_member': include_once 'c/delete/delete_member.php'; break;
 
         case 'delete_transaksi': include_once 'c/delete/delete_transaksi.php'; break;
+
+        case 'tambah_transaksi_paket': include_once 'c/tambah/tambah_transaksi_paket.php'; break;
 
         // DEFAULT (jika tidak ada halaman)
         default: echo "<h1>NGEBUG CUY - $section</h1>"; break;
