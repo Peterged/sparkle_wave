@@ -4,6 +4,7 @@ if ($role == 'owner') {
     $message = "<h1>ANDA BUKAN ADMIN atau KASIR!</h1>";
     echo "<script>document.body.innerHTML = '$message';</script>";
 }
+$id_transaksi = $_GET['id'];
 ?>
 
 <?php
@@ -80,7 +81,7 @@ if(!$data) {
 
 
                 </div>
-                
+
                 </div>
                 <div class="transaksi-header-wrapper transaksi-100">
                 <div class="transaksi-header transaksi-100">
@@ -116,7 +117,7 @@ if(!$data) {
                     </table>
                 </div>
                 </div>
-                
+
 
                 <div class="transaksi-body">
                 <table class="tabel-data">
@@ -129,10 +130,10 @@ if(!$data) {
                         <th>Subtotal</th>
                     </tr>
                     <?php
-                    $query = "SELECT tb_detail_transaksi.id_paket, tb_detail_transaksi.qty, tb_paket.* FROM tb_detail_transaksi LEFT JOIN tb_paket ON tb_detail_transaksi .id_paket = tb_paket.id";
+                    $query = "SELECT tb_detail_transaksi.id_paket, tb_detail_transaksi.qty, tb_paket.* FROM tb_detail_transaksi LEFT JOIN tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id WHERE tb_detail_transaksi.id_transaksi = '$id_transaksi'";
                     $result = mysqli_query($koneksi, $query);
 
-                    
+
                     $total = 0;
                     while ($dataDetailTransaksi = mysqli_fetch_assoc($result)) {
                         $subtotal = $dataDetailTransaksi['harga'] * $dataDetailTransaksi['qty'];
@@ -152,7 +153,7 @@ if(!$data) {
                 </table>
             </div>
             </div>
-            
+
         </div>
     </div>
 </div>

@@ -1,11 +1,11 @@
-<?php 
+<?php
     $id_transaksi = $_GET['id_transaksi'];
 ?>
 
 <div class="form-container">
     <h1 class="title">Tambah Paket</h1>
     <h2>
-        <?php 
+        <?php
             $id = @$_GET['id'];
             $query = "SELECT * FROM tb_transaksi WHERE id = '$id_transaksi'";
             $result = mysqli_query($koneksi, $query);
@@ -14,7 +14,7 @@
             $queryMember = "SELECT * FROM tb_member WHERE id = '$data[id_member]'";
             $resultMember = mysqli_query($koneksi, $queryMember);
             $dataMember = mysqli_fetch_assoc($resultMember);
-            echo "<h2>$data[kode_invoice] - $dataMember[nama]</h2>";
+            echo "<p>$data[kode_invoice] - $dataMember[nama]</p>";
         ?>
     </h2>
     <?php
@@ -22,18 +22,14 @@
                 $query = "SELECT id, nama FROM tb_outlet WHERE id = '$idOutlet'";
                 $result = mysqli_query($koneksi, $query);
                 $data = mysqli_fetch_assoc($result);
-                    
-                    echo "<h3>$data[nama]</h3>";
-                
+
+                    echo "<p>Outlet - $data[nama]</p>";
+
                 ?>
 
     <form class="box-form" action="?page=proses_tambah_transaksi_paket&id_transaksi=<?= $id_transaksi ?>" method="post">
-        
-        
-        
-        
-        
-        <select name="id_member" id="" required>
+
+        <select name="id_paket" id="" required>
             <option value="" disabled selected> -- Pilih Paket -- </option>
             <?php
                 $idOutlet = $_SESSION['id_outlet'];
@@ -46,10 +42,10 @@
                 }
             ?>
         </select>
-        
+
         <input type="number" name="qty" placeholder="Qty" required>
         <textarea name="keterangan" id="" cols="30" rows="10" placeholder="Keterangan"></textarea>
         <input type="submit" class="submit" name="submit" value="TAMBAH PAKET">
     </form>
-    
+
 </div>

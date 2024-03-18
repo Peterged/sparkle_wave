@@ -12,10 +12,6 @@
     echo "<h3>$data[nama]</h3>";
     ?>
     <form class="box-form" action="?page=proses_tambah_transaksi" method="post">
-
-
-
-
         </select>
         <!-- <input type="text" name="kode_invoice" value="<?= uniqid() ?>" placeholder="Kode Invoice" id="" readonly required> -->
         <select name="id_member" id="" required>
@@ -37,14 +33,14 @@
 
         <select name="status" id="" required>
             <option value="baru" selected>Baru</option>
-            
+
         </select>
         <select name="dibayar" id="" required>
             <option value="belum_dibayar" selected>Belum Dibayar</option>
             <option value="dibayar">Dibayar</option>
         </select>
 
-        
+
 
         <input type="submit" class="submit" name="submit" value="LANJUT TAMBAH PAKET">
     </form>
