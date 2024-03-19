@@ -1,6 +1,7 @@
 <?php
     $section = @$_GET['page'];
 
+
     switch($section) {
         case 'dashboard': include_once 'c/dashboard.php'; break;
 
@@ -17,6 +18,11 @@
         case 'detail_transaksi': include_once 'c/detail_transaksi.php'; break;
 
         case 'register': include_once '../users/register.php'; break;
+
+        case 'laporan': include_once '../users/laporan.php'; break;
+
+        case 'cetak_laporan': include_once 'c/cetak_laporan.php'; break;
+
 
 
         // TAMBAH
@@ -42,6 +48,8 @@
 
         case 'proses_tambah_transaksi': include_once 'c/proses_tambah/proses_tambah_transaksi.php'; break;
 
+        case 'proses_tambah_transaksi_paket': include_once 'c/proses_tambah/proses_tambah_transaksi_paket.php'; break;
+
 
         // EDIT
         case 'edit_karyawan': include_once 'c/edit/edit_karyawan.php'; break;
@@ -53,9 +61,9 @@
         case 'edit_paket': include_once 'c/edit/edit_paket.php'; break;
 
         case 'edit_member': include_once 'c/edit/edit_member.php'; break;
+
         case 'edit_transaksi': include_once 'c/edit/edit_transaksi.php'; break;
 
-        case 'edit_laporan': include_once 'c/edit/edit_laporan.php'; break;
 
 
         // PROSES EDIT
@@ -70,8 +78,6 @@
         case 'proses_edit_member': include_once 'c/proses_edit/proses_edit_member.php'; break;
 
         case 'proses_edit_transaksi': include_once 'c/proses_edit/proses_edit_transaksi.php'; break;
-
-        case 'proses_tambah_transaksi_paket': include_once 'c/proses_tambah/proses_tambah_transaksi_paket.php'; break;
 
         // DELETE
         case 'delete_karyawan': include_once 'c/delete/delete_karyawan.php'; break;

@@ -1,21 +1,29 @@
 <?php
-    $role = @$_SESSION['role'];
-    if($role == 'owner') {
-        $message = '<h1>ANDA BUKAN ADMIN atau KASIR!</h1>';
-        echo "<script>document.body.innerHTML = '$message'</script>";
-    }
+$role = @$_SESSION['role'];
+if ($role == 'owner') {
+    $message = '<h1>ANDA BUKAN ADMIN atau KASIR!</h1>';
+    echo "<script>document.body.innerHTML = '$message'</script>";
+}
 ?>
 
 
 <div class="box karyawan">
+
     <a href="?page=tambah_transaksi">Tambah Transaksi</a>
-    <h1 class="title">Data Transaksi</h1>
+    <div style="display: flex; justify-content: space-between">
+        <h1 class="title">Data Transaksi</h1>
+        <div>
+            <form action="?page=cetak_laporan" method="post">
+                <input type="date" name="tgl_awal" id="" style="color: black">
+                <input type="date" name="tgl_akhir" id="" style="color: black"  >
+                <input type="submit" value="Cetak Laporan" style="color: black">
+            </form>
+        </div>
+    </div>
     <table class="tabel-data">
         <tr>
-            <th>ID</th>
             <th>Kode Invoice</th>
-            <th>ID User</th>
-            <th>ID Outlet</th>
+            <th>Daftar Paket</th>
             <th>Tgl</th>
             <th>Batas Waktu</th>
             <th>Status</th>
@@ -23,37 +31,59 @@
             <th colspan="3">Actions</th>
         </tr>
         <?php
-            $query = "SELECT * from tb_transaksi";
-            $result = mysqli_query($koneksi, $query);
+        $query = "SELECT tb_transaksi.*, tb_member.nama AS nama_member FROM tb_transaksi JOIN tb_member ON tb_transaksi.id_member = tb_member.id";
+        $result = mysqli_query($koneksi, $query);
 
-            while($data = mysqli_fetch_assoc($result)) {
-                echo "
-                    <tr>
-                    <td>$data[id]</td>
-                    <td>$data[kode_invoice]</td>
-                    <td>$data[id_user]</td>
-                    <td>$data[id_outlet]</td>
-                    <td>$data[tgl]</td>
-                    <td>$data[batas_waktu]</td>
-                    <td>$data[status]</td>
-                    <td>$data[dibayar]</td>
-                    <td><a href='?page=edit_transaksi&id=$data[id]'>EDIT</a></td>  
-                    ";
-                    
-                    // <td>$data[tgl_bayar]</td>
-                                    // <td>$data[biaya_tambahan]</td>
-                    // <td>$data[diskon]</td>
-                    // <td>$data[pajak]</td>
+        $queryData = "SELECT tb_detail_Transaksi.*, tb_paket.nama_paket, tb_paket.harga FROM tb_detail_transaksi JOIN tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id";
+        $resultData = mysqli_query($koneksi, $queryData);
+        $dataPaket = mysqli_fetch_all($resultData, MYSQLI_ASSOC);
 
-                
-                echo "<td><a href='?page=delete_transaksi&id=$data[id]'>DELETE</a></td>";
-                echo "<td><a href='?page=tambah_transaksi_paket&id_transaksi=$data[id]'>PAKET</a></td>";
+        while ($data = mysqli_fetch_assoc($result)) {
 
-                if($role == 'admin' || $role == 'kasir') {
-                    echo "<td><a href='?page=detail_transaksi&id=$data[id]'>DETAIL</a></td>";
-                }
-                echo "</tr>";
-            }
         ?>
+
+            <tr>
+                <td><?= $data['kode_invoice'] ?></td>
+                <td>
+                    <?php
+                    $total_harga = 0;
+                    foreach ($dataPaket as $paket) {
+                        if ($paket['id_transaksi'] == $data['id']) {
+                            $total_harga += $paket['harga'];
+                        }
+                    }
+                    foreach ($dataPaket as $paket) {
+                        if ($paket['id_transaksi'] == $data['id']) {
+                    ?>
+                            <p>( <?= $paket['qty'] ?> ) <?= $paket['nama_paket'] ?></p>
+
+
+                    <?php
+
+                        }
+                    }
+
+                    ?>
+                    <br>
+                    <h3><?= number_format($total_harga, 0, ',', '.') ?></h3>
+                </td>
+                <td><?= $data['tgl'] ?></td>
+                <td><?= $data['batas_waktu'] ?></td>
+                <td><?= $data['status'] ?></td>
+                <td><?= $data['dibayar'] ?></td>
+
+
+
+
+
+                <td><a href='?page=delete_transaksi&id=<?= $data['id'] ?>' onclick="return confirm('Apakah ingin mendelete transaksi?')">DELETE</a></td>
+                <td><a href='?page=tambah_transaksi_paket&id_transaksi=<?= $data['id'] ?>'>PAKET</a></td>
+                <td><a href='?page=detail_transaksi&id=<?= $data['id'] ?>'>DETAIL</a></td>
+
+            </tr>
+        <?php
+        }
+        ?>
+
     </table>
 </div>

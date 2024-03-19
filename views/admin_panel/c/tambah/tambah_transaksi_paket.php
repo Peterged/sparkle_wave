@@ -14,7 +14,7 @@
             $queryMember = "SELECT * FROM tb_member WHERE id = '$data[id_member]'";
             $resultMember = mysqli_query($koneksi, $queryMember);
             $dataMember = mysqli_fetch_assoc($resultMember);
-            echo "<p>$data[kode_invoice] - $dataMember[nama]</p>";
+            echo "<p><a href='?page=detail_transaksi&id=$data[id]'>$data[kode_invoice]</a> - $dataMember[nama]</p>";
         ?>
     </h2>
     <?php

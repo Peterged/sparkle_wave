@@ -10,6 +10,7 @@ $id_transaksi = $_GET['id'];
 <?php
 $id = @$_GET['id'];
 $query = "SELECT tb_transaksi.*, tbdt.id_transaksi, tbdt.id_paket, tbdt.qty FROM tb_transaksi INNER JOIN tb_detail_transaksi tbdt ON tb_transaksi.id = tbdt.id_transaksi WHERE tb_transaksi.id = '$id'";
+
 $hasil = mysqli_query($koneksi, $query);
 $data = mysqli_fetch_assoc($hasil);
 
@@ -20,13 +21,14 @@ if(!$data) {
 <div class="box detail-transaksi">
     <div class="form-container">
         <h1 class="title" onclick="window.print();">DETAIL INVOICE</h1>
+        <button class="noprint" type="button" onclick="window.print()">PRINT</button>
         <div class="transaksi">
             <div class="transaksi-content">
                 <div class="transaksi-header-wrapper">
                 <div class="transaksi-header">
                     <table class="transaksi-header-item">
                         <tr class="title-transaksi">
-                            <th>Kode Invoice</th>
+                            <th class="tulisan-hitam-saat-print">Kode Invoice</th>
                             <td><?= $data['kode_invoice']; ?></td>
                         </tr>
                         <tr>

@@ -64,7 +64,7 @@ table.transaksi-header-item {
   width: max-content;
   text-align: left;
   padding: 5px 15px;
-  
+
 }
 
 .transaksi-header-item tr td {
@@ -87,11 +87,11 @@ table.transaksi-header-item {
 }
 
 /* .transaksi-body {
-  
+
 }
 
 table {
- 
+
 }
 
 th {
@@ -122,5 +122,12 @@ td {
   }
   .transaksi-header-item tr {
     border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+  }
+  .noprint {
+    display: none !important;
+  }
+
+  .tulisan-hitam-saat-print {
+    color: #000 !important;
   }
 }

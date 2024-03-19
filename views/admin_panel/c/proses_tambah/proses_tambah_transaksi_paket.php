@@ -1,12 +1,10 @@
 <?php
-ini_set('display_errors', 0);
+// ini_set('display_errors', 0);
 $id_transaksi = $_GET['id_transaksi'];
 $id_paket = $_POST['id_paket'];
 
-// ?? itu apa?
-// $_POST['qty'] ?? ''
-// Jika $_POST['qty'], maka
-$id_outlet = $_POST['qty'] ?? 1;
+
+$qty = $_POST['qty'] ?? 1;
 $keterangan = $_POST['keterangan'] ?? '';
 
 $queryPaket = "SELECT * FROM tb_paket WHERE id = '$id_paket'";
@@ -16,8 +14,10 @@ $dataPaket = mysqli_fetch_assoc($dataPaket);
 $jenis = $dataPaket['jenis'];
 $nama_paket = $dataPaket['nama_paket'];
 $harga = $dataPaket['harga'];
+$total_harga = $harga * $qty;
 
-$query = "INSERT INTO tb_detail_transaksi VALUES (id, '$id_outlet', '$jenis', '$nama_paket', '$harga')";
+$query = "INSERT INTO tb_detail_transaksi    VALUES (NULL, '$id_transaksi', '$id_paket', '$qty', '$keterangan', '$total_harga')";
 mysqli_query($koneksi, $query);
 
-header("Location: ?page=tambah_transaksi_paket&id_transaksi=$id_transaksi");
+echo 'p';
+header("Location: panel.php?page=tambah_transaksi_paket&id_transaksi=$id_transaksi");
