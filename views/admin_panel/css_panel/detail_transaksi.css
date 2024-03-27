@@ -103,6 +103,9 @@ td {
 } */
 
 @media print {
+  * {
+    color: black !important;
+  }
   .sidebar {
     display: none !important;
   }

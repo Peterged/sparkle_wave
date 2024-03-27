@@ -14,14 +14,21 @@ $query = "SELECT tb_transaksi.*, tbdt.id_transaksi, tbdt.id_paket, tbdt.qty FROM
 $hasil = mysqli_query($koneksi, $query);
 $data = mysqli_fetch_assoc($hasil);
 
-if(!$data) {
-    echo "<script>alert('Detail Transaksi tidak ditemukan!');window.location.replace('?page=transaksi');</script>";
+$queryTransaksi = mysqli_query($koneksi, "SELECT * FROM tb_transaksi WHERE id = '$id'");
+$dataTransaksi = mysqli_fetch_assoc($queryTransaksi);
+
+if(!$dataTransaksi) {
+    echo "<script>alert('Transaksi tidak ditemukan!');window.location.href='?page=transaksi';</script>";
+}
+elseif(!$data) {
+    echo "<script>alert('Detail Transaksi memerlukan paket!');window.location.href='?page=tambah_transaksi_paket&id_transaksi={$id}';</script>";
 }
 ?>
 <div class="box detail-transaksi">
     <div class="form-container">
         <h1 class="title" onclick="window.print();">DETAIL INVOICE</h1>
         <button class="noprint" type="button" onclick="window.print()">PRINT</button>
+        <a class="noprint" href="?page=edit_transaksi&id=<?= $id ?>">EDIT TRANSAKSI</a>
         <div class="transaksi">
             <div class="transaksi-content">
                 <div class="transaksi-header-wrapper">
@@ -51,7 +58,9 @@ if(!$data) {
                         </tr>
                         <tr>
                             <th>Status</th>
-                            <td><?= $data['status'] ?></td>
+                            <td>
+                                <?= $data['status'] ?>
+                            </td>
                         </tr>
                     </table>
                 </div>
@@ -130,9 +139,12 @@ if(!$data) {
                         <th>Harga</th>
                         <th>Jumlah</th>
                         <th>Subtotal</th>
+                        <th class="noprint">
+                            <a href="?page=tambah_transaksi_paket&id_transaksi=<?= $id_transaksi ?>">TAMBAH</a>
+                        </th>
                     </tr>
                     <?php
-                    $query = "SELECT tb_detail_transaksi.id_paket, tb_detail_transaksi.qty, tb_paket.* FROM tb_detail_transaksi LEFT JOIN tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id WHERE tb_detail_transaksi.id_transaksi = '$id_transaksi'";
+                    $query = "SELECT tb_detail_transaksi.id AS id_detail_transaksi, tb_detail_transaksi.id_paket, tb_detail_transaksi.qty, tb_paket.* FROM tb_detail_transaksi LEFT JOIN tb_paket ON tb_detail_transaksi.id_paket = tb_paket.id WHERE tb_detail_transaksi.id_transaksi = '$id_transaksi'";
                     $result = mysqli_query($koneksi, $query);
 
 
@@ -140,16 +152,22 @@ if(!$data) {
                     while ($dataDetailTransaksi = mysqli_fetch_assoc($result)) {
                         $subtotal = $dataDetailTransaksi['harga'] * $dataDetailTransaksi['qty'];
                         $total += $subtotal;
-                        echo "
+                     ?>
+
+
                                 <tr>
-                                <td>$dataDetailTransaksi[id_paket]</td>
-                                <td>$dataDetailTransaksi[jenis]</td>
-                                <td>$dataDetailTransaksi[nama_paket]</td>
-                                <td>$dataDetailTransaksi[harga]</td>
-                                <td>$dataDetailTransaksi[qty]</td>
-                                <td>$subtotal</td>
+                                <td><?= $dataDetailTransaksi['id_paket'] ?></td>
+                                <td><?= $dataDetailTransaksi['jenis'] ?></td>
+                                <td><?= $dataDetailTransaksi['nama_paket'] ?></td>
+                                <td><?= $dataDetailTransaksi['harga'] ?></td>
+                                <td><?= $dataDetailTransaksi['qty'] ?></td>
+                                <td><?= $subtotal ?></td>
+                                <td class="noprint">
+                                    <a href="?page=delete_transaksi_paket&id_detail_transaksi=<?= $dataDetailTransaksi['id_detail_transaksi'] ?>&id_transaksi=<?= $id_transaksi ?>" onclick="return confirm('Apakah yakin ingin menghapus paket?')">DELETE</a>
+                                </td>
                                 </tr>
-                            ";
+
+                    <?php
                     }
                     ?>
                 </table>

@@ -33,15 +33,28 @@ if ($role != 'admin') {
             <td>$data[role]</td>
             <td><a href='?page=edit_karyawan&id=$data[id]'>EDIT</a></td>
             ";
-            
+
             if ($data['nama_user'] == $_SESSION['username']) {
                 echo "<td>Ini akun yang anda sedang gunakan</td>";
                 continue;
+            } else {
+
+                $id = $data['id'];
+                $hide_delete = mysqli_fetch_row(mysqli_query($koneksi, "SELECT COUNT(*) as total FROM tb_user INNER JOIN tb_transaksi ON tb_user.id=tb_transaksi.id_user WHERE tb_user.id='$id'"));
+
+                if ($_SESSION['username'] != $data['username'] && $hide_delete[0] == '0') {
+
+            ?>
+                <td>
+                    <a href="?page=delete_karyawan&id=<?= $data['id'] ?>" onclick="return confirm('Apakah ingin menghapus data ini?')">DELETE</a>
+                </td>
+            <?php
+                  }
+                }
             }
-            else {
-                echo "<td><a href='?page=delete_karyawan&id=$data[id]'>DELETE</a></td>";
-            }
-        }
-        ?>
+            ?>
+
+
+
     </table>
 </div>

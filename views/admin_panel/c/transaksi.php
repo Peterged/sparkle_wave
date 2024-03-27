@@ -1,9 +1,9 @@
 <?php
 $role = @$_SESSION['role'];
-if ($role == 'owner') {
-    $message = '<h1>ANDA BUKAN ADMIN atau KASIR!</h1>';
-    echo "<script>document.body.innerHTML = '$message'</script>";
-}
+// if ($role == 'owner') {
+//     $message = '<h1>ANDA BUKAN ADMIN atau KASIR!</h1>';
+//     echo "<script>document.body.innerHTML = '$message'</script>";
+// }
 ?>
 
 
@@ -28,7 +28,14 @@ if ($role == 'owner') {
             <th>Batas Waktu</th>
             <th>Status</th>
             <th>Dibayar</th>
-            <th colspan="3">Actions</th>
+            <?php
+                if($role != 'owner') {
+            ?>
+            <th colspan="4">Actions</th>
+
+            <?php
+                }
+            ?>
         </tr>
         <?php
         $query = "SELECT tb_transaksi.*, tb_member.nama AS nama_member FROM tb_transaksi JOIN tb_member ON tb_transaksi.id_member = tb_member.id";
@@ -39,7 +46,6 @@ if ($role == 'owner') {
         $dataPaket = mysqli_fetch_all($resultData, MYSQLI_ASSOC);
 
         while ($data = mysqli_fetch_assoc($result)) {
-
         ?>
 
             <tr>
@@ -72,18 +78,19 @@ if ($role == 'owner') {
                 <td><?= $data['status'] ?></td>
                 <td><?= $data['dibayar'] ?></td>
 
-
-
-
-
+                <?php
+                    if($role != 'owner') {
+                ?>
                 <td><a href='?page=delete_transaksi&id=<?= $data['id'] ?>' onclick="return confirm('Apakah ingin mendelete transaksi?')">DELETE</a></td>
                 <td><a href='?page=tambah_transaksi_paket&id_transaksi=<?= $data['id'] ?>'>PAKET</a></td>
                 <td><a href='?page=detail_transaksi&id=<?= $data['id'] ?>'>DETAIL</a></td>
-
+                <td><a href="?page=edit_transaksi&id=<?= $data['id'] ?>">EDIT</a></td>
+                <?php
+                    }
+                ?>
             </tr>
         <?php
         }
         ?>
-
     </table>
 </div>

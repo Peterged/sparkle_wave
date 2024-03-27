@@ -5,14 +5,19 @@ $batas_waktu = $_POST['batas_waktu'];
 $tgl_bayar = $_POST['tgl_bayar'];
 $biaya_tambahan = $_POST['biaya_tambahan'];
 $diskon = $_POST['diskon'];
-$pajak = $_POST['pajak'];
+$pajak = 0.0075;
 $status = $_POST['status'];
 $dibayar = $_POST['dibayar'];
-$id_user = $_POST['id_user'];
+
+date_default_timezone_set("Asia/Makassar");
+
+if($dibayar == 'dibayar') {
+    $tgl_bayar = date('Y-m-d H:i:s');
+}
 
 $id = @$_GET['id'];
 
-$query = "UPDATE tb_transaksi SET id_outlet = '$id_outlet', id_member = '$id_member', batas_waktu = '$batas_waktu', tgl_bayar = '$tgl_bayar', biaya_tambahan = '$biaya_tambahan', diskon = '$diskon', pajak = '$pajak', status = '$status', dibayar = '$dibayar', id_user = '$id_user' WHERE id = '$id'";
+$query = "UPDATE tb_transaksi SET id_outlet = '$id_outlet', id_member = '$id_member', batas_waktu = '$batas_waktu', tgl_bayar = '$tgl_bayar', biaya_tambahan = '$biaya_tambahan', pajak = '$pajak', status = '$status', dibayar = '$dibayar' WHERE id = '$id'";
 $hasil = mysqli_query($koneksi, $query);
 
 if($hasil){
@@ -39,9 +44,9 @@ else {
 // }
 // else {
 //     $query = "INSERT INTO tb_paket VALUES (NULL, '$id_outlet', '$jenis', '$nama_paket', '$harga')";
-    
+
 //     mysqli_query($koneksi, $query);
-    
+
 //     header("Location: ?page=paket");
 // }
 

@@ -19,7 +19,7 @@
 
         case 'register': include_once '../users/register.php'; break;
 
-        case 'laporan': include_once '../users/laporan.php'; break;
+        case 'laporan': include_once 'c/transaksi.php'; break;
 
         case 'cetak_laporan': include_once 'c/cetak_laporan.php'; break;
 
@@ -91,6 +91,8 @@
         case 'delete_transaksi': include_once 'c/delete/delete_transaksi.php'; break;
 
         case 'tambah_transaksi_paket': include_once 'c/tambah/tambah_transaksi_paket.php'; break;
+
+        case 'delete_transaksi_paket': include_once 'c/delete/delete_transaksi_paket.php'; break;
 
         // DEFAULT (jika tidak ada halaman)
         default: include_once 'c/dashboard.php'; break;
